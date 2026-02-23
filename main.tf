@@ -69,6 +69,15 @@ resource "aws_route_table" "public" {
   }
 }
 
+resource "aws_vpc" "vpc3" {
+  cidr_block           = "10.20.0.0/16"
+  enable_dns_support   = true
+  enable_dns_hostnames = true
+
+  tags = { Name = "vpc-3" }
+}
+
+
 # -------------------------
 # Two Public Subnets (2 AZs)
 # -------------------------
